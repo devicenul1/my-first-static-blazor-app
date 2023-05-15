@@ -18,7 +18,8 @@ namespace ApiIsolated
         }
 
         [Function("WeatherForecast")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
+        public HttpResponseData Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
         {
             var randomNumber = new Random();
             var temp = 0;
@@ -46,7 +47,7 @@ namespace ApiIsolated
             }
             else if (temp <= 16 && temp > 0)
             {
-                summary = "Cold";
+                summary = "Ralph";
             }
             else if (temp <= 0)
             {
