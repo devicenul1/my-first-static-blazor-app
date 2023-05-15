@@ -13,7 +13,7 @@
     },
     {
       "route": "/logout",
-      "redirect": "/.auth/logout"
+      "redirect": "/.auth/logout?post_logout_redirect_uri=/index.html"
     },
     {
       "route": "/fetchdata",
@@ -31,6 +31,18 @@
     },
     "404": {
       "rewrite": "/404.html"
+    }
+  },
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/a25b6f88-0028-4f7f-a8a0-28b58355a1db",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
     }
   },
   "globalHeaders": {
