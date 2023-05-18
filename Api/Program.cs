@@ -13,21 +13,13 @@ namespace ApiIsolated
         public static void Main()
         {
             var host = new HostBuilder()
-                .ConfigureFunctionsWorkerDefaults(builder =>
-                {
-                    // builder
-                    //     .Services
-                    //         .addop
-                    //         .AddMicrosoftIdentityWebApiAuthentication(Environment.get System.Configuration.GetSection("AzureAd"));
-                })
+                .ConfigureFunctionsWorkerDefaults()
                 .ConfigureServices(s =>
                 {
                 })
                 .Build();
 
             host.Run();
-
-            host.Services.add
         }
     }
 }
