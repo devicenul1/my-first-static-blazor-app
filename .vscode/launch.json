@@ -13,15 +13,25 @@
       "request": "attach",
       "processId": "${command:azureFunctions.pickProcess}",
       "preLaunchTask": "omg"
+    },
+    {
+      "name": "Watch",
+      "type": "coreclr",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/Client",
+      "program": "dotnet",
+      "args": [
+        "watch",
+        "--project",
+        ".",
+        "--verbose" // Let's us confirm browser connects with hot reload capabilities
+      ]
     }
   ],
   "compounds": [
     {
       "name": "Client/Server",
-      "configurations": [
-        "Attach to .NET Functions",
-        "Launch and Debug Standalone Blazor WebAssembly App"
-      ]
+      "configurations": ["Attach to .NET Functions", "Watch"]
     }
   ]
 }
